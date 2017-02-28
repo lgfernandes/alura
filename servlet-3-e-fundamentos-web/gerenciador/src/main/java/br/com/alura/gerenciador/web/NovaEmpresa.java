@@ -12,6 +12,10 @@ import javax.servlet.http.HttpServletResponse;
 import br.com.alura.gerenciador.Empresa;
 import br.com.alura.gerenciador.dao.EmpresaDAO;
 
+/**
+ * @author Leandro
+ * @date 28-02-2017
+ */
 
 @WebServlet(urlPatterns= "/novaEmpresa")
 public class NovaEmpresa extends HttpServlet{

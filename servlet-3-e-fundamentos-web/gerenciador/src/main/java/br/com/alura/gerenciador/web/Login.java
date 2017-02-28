@@ -18,7 +18,7 @@ import br.com.alura.gerenciador.dao.UsuarioDAO;
 
 /**
  * @author Leandro
- * @date 28/02/2017
+ * @date 28-02-2017
  */
 @WebServlet(urlPatterns="/login")
 public class Login extends HttpServlet{
