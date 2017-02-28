@@ -16,9 +16,6 @@ import br.com.alura.gerenciador.dao.EmpresaDAO;
 @WebServlet(urlPatterns= "/novaEmpresa")
 public class NovaEmpresa extends HttpServlet{
 	
-	/**
-	 * 
-	 */
 	private static final long serialVersionUID = 1L;
 
 	@Override
