@@ -1,11 +1,5 @@
 package br.com.alura.gerenciador.web;
 
-import java.io.IOException;
-import java.io.PrintWriter;
-
-import javax.servlet.ServletException;
-import javax.servlet.annotation.WebServlet;
-import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
@@ -17,28 +11,21 @@ import br.com.alura.gerenciador.dao.EmpresaDAO;
  * @date 28-02-2017
  */
 
-@WebServlet(urlPatterns= "/novaEmpresa")
-public class NovaEmpresa extends HttpServlet{
+public class NovaEmpresa implements ITarefa{
 	
-	private static final long serialVersionUID = 1L;
 
 	@Override
-	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-		
+	public String executa(HttpServletRequest req, HttpServletResponse resp) {
 		String nome = req.getParameter("nome");
 		Empresa empresa = new Empresa(nome);
 		new EmpresaDAO().adiciona(empresa);
-		PrintWriter writer = resp.getWriter();
-		writer.println("<html><body>Empresa adicionada com sucesso: " + empresa.getNome() + "</body></html>");
+		
+		req.setAttribute("empresa", empresa);
+		req.setAttribute("nome", nome);
+		
+		return "WEB-INF/paginas/novaEmpresa.jsp";
 	}
 	
-	@Override
-	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-		String nome = req.getParameter("nome");
-		Empresa empresa = new Empresa(nome);
-		new EmpresaDAO().adiciona(empresa);
-		PrintWriter writer = resp.getWriter();
-		writer.println("<html><body>Empresa adicionada com sucesso: " + empresa.getNome() + "</body></html>");
-	}
+	
 
 }

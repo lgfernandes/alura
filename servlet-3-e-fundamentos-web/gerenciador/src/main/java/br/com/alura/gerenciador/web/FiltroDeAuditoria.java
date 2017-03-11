@@ -36,13 +36,13 @@ public class FiltroDeAuditoria implements Filter{
 		HttpServletRequest req = (HttpServletRequest) request;
 		String uri = req.getRequestURI();
 		String usuario = getUsuario(req);
-				
+		
 		System.out.println("Usuário" + usuario + "acessando a URI " + uri);
 		chain.doFilter(request, response);
 	}
 
 	private String getUsuario(HttpServletRequest req) {
-		Usuario usuario = (Usuario)req.getSession().getAttribute("usuario.logado");
+		Usuario usuario = (Usuario)req.getSession().getAttribute("usuarioLogado");
 		if (usuario == null) {
 			return "<Deslogado>";
 		} else {
