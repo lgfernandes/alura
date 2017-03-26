@@ -26,7 +26,7 @@
 			<input type="submit" value="Buscar">
 		</form>
 		
-		<form action="fazTudo" method="POST">
+		<form action="executa" method="POST">
 			<input type="hidden" name="tarefa" value="Logout"> 
 			<input type="submit" value="Deslogar">
 		</form>

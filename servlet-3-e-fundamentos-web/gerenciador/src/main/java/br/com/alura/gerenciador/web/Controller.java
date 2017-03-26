@@ -16,8 +16,8 @@ import javax.servlet.http.HttpServletResponse;
  * @author Leandro
  *
  */
-@WebServlet(urlPatterns="/fazTudo")
-public class FazTudo extends HttpServlet{
+@WebServlet(urlPatterns="/executa")
+public class Controller extends HttpServlet{
 	
 	@Override
 	protected void service(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
